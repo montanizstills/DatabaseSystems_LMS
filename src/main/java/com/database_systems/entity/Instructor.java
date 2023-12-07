@@ -1,4 +1,6 @@
 package com.database_systems.entity;
 
-public class Instructor {
+
+public class Instructor extends Admin {
+
 }

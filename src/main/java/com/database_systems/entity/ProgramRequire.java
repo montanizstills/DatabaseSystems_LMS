@@ -5,16 +5,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.*;
 
+import java.util.Date;
+
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Program {
+public class ProgramRequire {
     @Id
+    private Long programRequireId;
+    @ManyToOne(targetEntity = Program.class)
     private Long programId;
-    private String programStatement;
-    @ManyToOne(targetEntity = Department.class)
-    private Long deptId;
+    @ManyToOne(targetEntity = Course.class)
+    private Long courseNo;
+    private Date addTime;
 }

@@ -11,12 +11,13 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Admin {
+public class RubricGrade {
     @Id
-    private Long adminId;
-    private String lastName;
-    private String firstName;
-    private String phone;
-    @ManyToOne(targetEntity = Department.class)
-    private Long deptId;
+    private Long rubricGradeNo;
+    @ManyToOne(targetEntity = Rubric.class)
+    private Long rubricId;
+    @ManyToOne(targetEntity = Evaluator.class)
+    private Long evaluatorId;
+    private Float rubricGrade;
+
 }

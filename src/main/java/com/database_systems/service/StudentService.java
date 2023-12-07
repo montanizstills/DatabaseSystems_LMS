@@ -1,6 +1,6 @@
 package com.database_systems.service;
 
-import com.database_systems.contoller.repository.StudentRepository;
+import com.database_systems.repository.StudentRepository;
 import com.database_systems.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,15 +21,15 @@ public class StudentService {
     }
 
     public Student read(Student student) {
-        return studentRepository.findById(student.getId()).get();
+        return this.studentRepository.findById(student.getId()).get();
     }
 
     public Student update(Student student) {
-        return studentRepository.save(student);
+        return this.studentRepository.save(student);
     }
 
     public Student delete(Student student) {
-        studentRepository.delete(student);
+        this.studentRepository.delete(student);
         return student;
     }
 }
