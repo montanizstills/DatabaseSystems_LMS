@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @Controller
 @RequestMapping("/course-section-controller")
 public class CourseSectionController {
@@ -25,8 +27,13 @@ public class CourseSectionController {
     }
 
     @GetMapping(path = "/read-course-section")
-    public ResponseEntity<CourseSection> read(@RequestBody CourseSection courseSection) {
-        CourseSection responseBody = this.courseSectionService.readCourseSection(courseSection);
+    public ResponseEntity<CourseSection> read(@RequestBody Map<String, String> course) {
+        CourseSection responseBody = this.courseSectionService
+                .readCourseSection(
+                        course.get("semester"),
+                        Long.valueOf(course.get("courseNo")),
+                        Long.valueOf(course.get("sectionNo"))
+                );
         return new ResponseEntity<>(responseBody, HttpStatus.OK);
     }
 

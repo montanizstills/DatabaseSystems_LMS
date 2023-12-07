@@ -19,9 +19,8 @@ public class CourseSectionService {
         return this.courseSectionRepository.save(courseSection);
     }
 
-    public CourseSection readCourseSection(CourseSection courseSection) {
-        return null;
-        //        return this.courseSectionRepository.findBy(courseSection,);
+    public CourseSection readCourseSection(String semester, Long courseNo, Long sectionId) {
+        return this.courseSectionRepository.findBySemesterAndCourseNoAndSectionNo(semester,courseNo,sectionId);
     }
 
     public CourseSection updateCourseSection(CourseSection courseSection) {

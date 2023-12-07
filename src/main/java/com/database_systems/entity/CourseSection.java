@@ -1,8 +1,6 @@
 package com.database_systems.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -12,13 +10,15 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 public class CourseSection {
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long sectionId;
     @ManyToOne(targetEntity = Course.class)
     private Long courseNo;
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long sectionNo;
     private String semester;
     private Integer capacity;
+    @ManyToOne(targetEntity = Admin.class)
     private Long instructorId;
     private String room;
 }

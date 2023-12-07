@@ -1,6 +1,8 @@
 package com.database_systems.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 
@@ -11,7 +13,7 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 public class Course {
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.UUID)
     private String courseNo;
     private String courseName;
     private String prerequisite;
