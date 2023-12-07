@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "4e9a8a5c-163d-432b-8e2f-b07567e7d31c",
+		"name": "DatabaseSystems_LMS_Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20085223"
+	},
+	"item": [
+		{
+			"name": "CreateStudent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"dateOfBirth\":\"1995-02-26\",\r\n\"firstName\":\"Jane\",\r\n\"lastName\":\"Doe\",\r\n\"studentPhone\":\"000-111-5555\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/student-controller/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"student-controller",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateCourse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"courseName\": \"Database Systems\",\r\n    \"prequesite\": \"\",\r\n    \"description\": \"Entry level concepts about database design and implementation.\",\r\n    \"credit\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/course-controller/create-course",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"course-controller",
+						"create-course"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateSection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"semester\":\"SP31\",\r\n    \"capacity\":20,\r\n    \"room\":\"BEC-405\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/course-section-controller/create-course-section",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"course-section-controller",
+						"create-course-section"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateSection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"semester\":\"SP31\",\r\n    \"capacity\":30,\r\n    \"room\":\"MUSC-211\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/course-section-controller/create-course-section",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"course-section-controller",
+						"create-course-section"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EvaluatorAssignCourse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"studentId\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/evaluator-controller/assign-student-course-section",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"evaluator-controller",
+						"assign-student-course-section"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
