@@ -2,6 +2,7 @@ package com.database_systems.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.*;
 
@@ -16,5 +17,6 @@ public class Program {
     private Long programId;
     private String programStatement;
     @ManyToOne(targetEntity = Department.class)
+    @JoinColumn(name = "deptId", referencedColumnName = "deptId")
     private Long deptId;
 }

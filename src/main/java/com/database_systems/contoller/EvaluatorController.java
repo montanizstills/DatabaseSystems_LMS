@@ -23,18 +23,18 @@ public class EvaluatorController {
     }
 
     @PostMapping(path = "/assign-student-course-section")
-    public ResponseEntity<Enroll> registerStudentForCourseSection(@RequestBody Map<String,String> json){
-        String studentId = json.get("studentId");
-        String sectionId = json.get("sectionId");
-        Enroll enroll = this.evaluatorService.enrollStudent(studentId,sectionId);
+    public ResponseEntity<Enroll> registerStudentForCourseSection(@RequestBody Map<String,String> studentIdAndSectionIdJSON){
+        String studentId = studentIdAndSectionIdJSON.get("studentId");
+        String sectionId = studentIdAndSectionIdJSON.get("sectionId");
+        Enroll enroll = evaluatorService.enrollStudent(studentId,sectionId);
         return new ResponseEntity<>(enroll, HttpStatus.OK);
     }
 
     @PostMapping("/deregister-student-course-section")
-    public ResponseEntity<Enroll> deregisterStudentForCourseSection(@RequestBody Map<String, String> json){
-        String studentId = json.get("studentId");
-        String sectionId = json.get("sectionId");
-        Enroll deEnroll = this.evaluatorService.deEnrollStudent(studentId,sectionId);
+    public ResponseEntity<Enroll> deregisterStudentForCourseSection(@RequestBody Map<String, String> studentIdAndSectionIdJSON){
+        String studentId = studentIdAndSectionIdJSON.get("studentId");
+        String sectionId = studentIdAndSectionIdJSON.get("sectionId");
+        Enroll deEnroll = evaluatorService.deEnrollStudent(studentId,sectionId);
         return new ResponseEntity<>(deEnroll,HttpStatus.OK);
     }
 

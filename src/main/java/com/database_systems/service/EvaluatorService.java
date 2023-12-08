@@ -21,13 +21,17 @@ public class EvaluatorService {
 
 
     public Enroll enrollStudent(String studentId, String sectionId) {
-        Enroll enroll = new Enroll(
-                null,
-                Long.valueOf(studentId),
-                Long.valueOf(sectionId),
-                null,
-                null
-        );
+//        Enroll enroll = new Enroll(
+//                null,
+//                Long.valueOf(studentId),
+//                Long.valueOf(sectionId),
+//                null,
+//                null
+//        );
+        Enroll enroll = new Enroll();
+        enroll.setStudentId(Long.valueOf(studentId));
+        enroll.setSectionId(Long.valueOf(sectionId));
+        System.out.println(enroll);
         return this.enrollRepository.save(enroll);
     }
 
