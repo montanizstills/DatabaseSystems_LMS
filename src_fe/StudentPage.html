@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .student-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        select, button {
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #008CBA;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="student-container">
+    <button class="back-button" onclick="goBack()">Back</button>
+    <h2>Welcome, Student!</h2>
+
+    <h2>Your Courses:</h2>
+    <ul>
+        <!-- Display enrolled courses -->
+        <li>Course 1</li>
+        <li>Course 2</li>
+        <!-- Add more courses as needed -->
+    </ul>
+
+    <h2>View Current Grades:</h2>
+    <select id="selectCourseForGrades" name="selectCourseForGrades">
+        <!-- Options for enrolled courses -->
+        <option value="course1">Course 1</option>
+        <option value="course2">Course 2</option>
+        <!-- Add more options as needed -->
+    </select>
+
+    <button type="button" onclick="viewGrades()">View Grades</button>
+
+    <h2>Submit Assignment:</h2>
+    <select id="selectCourseForAssignment" name="selectCourseForAssignment">
+        <!-- Options for enrolled courses -->
+        <option value="course1">Course 1</option>
+        <option value="course2">Course 2</option>
+        <!-- Add more options as needed -->
+    </select>
+
+    <input type="file" id="assignmentFile" name="assignmentFile" accept=".pdf, .doc, .docx">
+    <button type="button" onclick="submitAssignment()">Submit Assignment</button>
+</div>
+
+<script>
+    function goBack() {
+        // Navigate back to the login screen or any desired location
+        window.location.href = "LogIn.html";
+    }
+
+    function viewGrades() {
+        // Implement logic to retrieve and display grades for the selected course
+        alert('Grades for the selected course: A, B, C');
+    }
+
+    function submitAssignment() {
+        // Implement logic to submit the assignment for the selected course
+        alert('Assignment submitted successfully!');
+    }
+</script>
+
+</body>
+</html>

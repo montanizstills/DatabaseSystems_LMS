@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .admin-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        select, input, button {
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #008CBA;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="admin-container">
+    <button class="back-button" onclick="goBack()">Back</button>
+    <h2>Admin Page</h2>
+
+    <label for="assignStudentProgram">Assign Student to Program:</label>
+    <select id="assignStudentProgram" name="assignStudentProgram">
+        <!-- Options for programs -->
+        <option value="program1">Program 1</option>
+        <option value="program2">Program 2</option>
+        <!-- Add more options as needed -->
+    </select>
+
+    <label for="addStudentToProgram">Add Student to Program:</label>
+    <input type="text" id="addStudentToProgram" name="addStudentToProgram" placeholder="Student ID">
+
+    <button type="button" onclick="addStudentToProgram()">Add Student</button>
+
+    <h2>Instructors in Each Department:</h2>
+    <!-- Display instructors for each department -->
+    <!-- Example: Department 1 -->
+    <p><strong>Department 1:</strong> Instructor 1, Instructor 2, Instructor 3</p>
+    <!-- Example: Department 2 -->
+    <p><strong>Department 2:</strong> Instructor 4, Instructor 5, Instructor 6</p>
+    <!-- Add more departments and instructors as needed -->
+
+    <h2>Instructors for Specific Program:</h2>
+    <select id="instructorsForProgram" name="instructorsForProgram">
+        <!-- Options for programs -->
+        <option value="program1">Program 1</option>
+        <option value="program2">Program 2</option>
+        <!-- Add more options as needed -->
+    </select>
+
+    <button type="button" onclick="getInstructorsForProgram()">Get Instructors</button>
+</div>
+
+<script>
+    function goBack() {
+        // Navigate back to the login screen or any desired location
+        window.location.href = "LogIn.html";
+    }
+
+    function addStudentToProgram() {
+        // Implement logic to add a student to the selected program
+        alert('Student added to program!');
+    }
+
+    function getInstructorsForProgram() {
+        // Implement logic to get instructors for the selected program
+        alert('Instructors for the selected program: Instructor 1, Instructor 2');
+    }
+</script>
+
+</body>
+</html>
