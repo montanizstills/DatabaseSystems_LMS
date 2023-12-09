@@ -51,15 +51,54 @@
     </style>
 </head>
 <body>
+    
 
 <div class="login-container">
     <h2>Login</h2>
-    <form class="login-form" action="your_login_action_url" method="post">
+    
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Login</button>
-    </form>
+        <br>
+        <input type="text" id="firstName" placeholder="First Name">
+        <br>
+        <input type="text" id="lastName" placeholder="Last Name">
+        <br>
+        <input type="text" id="dob" placeholder="Date of Birth">
+        <br>
+        <input type="text" id="phone" placeholder="Phone #">
+        <br>
+        <button type="submit" id="signUpButton" onclick="doSignUp()">Sign Up</button>
+    
 </div>
 
+<script>
+    const firstNameInputBox = document.getElementById("firstName")
+    const lastNameInputBox = document.getElementById("lastName")
+    const dobInputBox = document.getElementById("dob")
+    const phoneInputBox = document.getElementById("phone")
+    const doSignUp = () => {
+    fetch(
+        "http://localhost:8080/student-controller/create",
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Headers': 'POST'
+            },
+            body: JSON.stringify(
+                {
+                    "dateOfBirth": dobInputBox.value,
+                    "firstName":firstNameInputBox.value,
+                    "lastName": lastNameInputBox.value,
+                    "studentPhone": phoneInputBox.value
+                }
+            )
+        }
+    )
+    
+}
+</script>
 </body>
 </html>
